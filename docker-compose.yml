@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  app-cra-bi:
+    container_name: cra-bi-service
+    networks:
+      - network-cra-bi
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST_MONGO=mongo-cra-bi
+  mongo-cra-bi:
+    container_name: mongo-cra-bi
+    image: mongo
+    networks:
+      - network-cra-bi
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
+
+volumes:
+  mongo1_data:
+  mongo1_config:
+
+networks:
+  network-cra-bi:
+    driver: bridge

@@ -1,0 +1,25 @@
+# environment application
+APP_ENV : 'development'
+APP_PORT: '8080'
+LOGGER_SAVE_FILE: true
+VERSION_APP: "1.0.0"
+
+## environment database
+DB_HOST_MONGO: 127.0.0.1
+DB_PORT_MONGO: 27017
+DB_USER_MONGO: root
+DB_PASSWORD_MONGO: root
+DB_TIME_OUT_MONGO: 10 # seconds
+DB_NAME_DATABASE_MONGO: 'crabi'
+
+# urls api external
+URL_API_VERIFY_USER_BLOCKED: http://98.81.235.22/check-blacklist
+
+## environment JWT
+JWT_EXPIRED_TOKEN_TIME_MINUTE: 129600 # 3 months
+JWT_SECRET_KEY: 'base64:7Pvg2/EFSCUfA5gYP9g8/WuLGh658Sva2ZNBORqZ0cQ='
+
+# environment framework fiber
+SHOW_LOGS_REQUEST: true
+SHOW_MONITOR: true
+
