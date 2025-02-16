@@ -7,6 +7,8 @@ import (
 	"github.com/guillospy92/crabi/internal/core/ports"
 )
 
+//go:generate mockery --name=UserGetInfoUseCaseInterface --structname=UserGetInfoUseCaseInterfaceMock --filename=user_get_use_case_mock.go --output=mocks --outpkg=usecasesmock
+
 // UserGetInfoUseCaseInterface interface that contains the method to get user
 type UserGetInfoUseCaseInterface interface {
 	GetUserInfo(ctx context.Context, email string) (*domain.UserEntity, error)

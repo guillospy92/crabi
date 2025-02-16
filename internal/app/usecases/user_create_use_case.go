@@ -10,6 +10,8 @@ import (
 	"github.com/guillospy92/crabi/pkg/bcrypt"
 )
 
+//go:generate mockery --name=UserCreateUseCaseInterface --structname=UserCreateUseCaseInterfaceMock --filename=user_Create_use_case_mock.go --output=mocks --outpkg=usecasesmock
+
 // UserCreateUseCaseInterface interface that contains the method to create a user
 type UserCreateUseCaseInterface interface {
 	CreateUser(ctx context.Context, user domain.UserEntity) error

@@ -37,7 +37,6 @@ func GetContextApplication(c *fiber.Ctx) context.Context {
 
 // GetContextUser get information user context
 func GetContextUser(c *fiber.Ctx) domain.UserEntity {
-	fmt.Println("this is user in context", c.Locals(UserKeyContextKey))
 	user, ok := c.Locals(UserKeyContextKey).(domain.UserEntity)
 	if !ok {
 		panic(fmt.Errorf("user not found in context"))

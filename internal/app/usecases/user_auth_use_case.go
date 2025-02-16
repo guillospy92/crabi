@@ -13,6 +13,8 @@ import (
 	"github.com/guillospy92/crabi/resources"
 )
 
+//go:generate mockery --name=UserAuthUseCaseInterface --structname=UserAuthUseCaseInterfaceMock --filename=user_auth_use_case_mock_mock.go --output=mocks --outpkg=usecasesmock
+
 // UserAuthUseCaseInterface interface that contains the method to log in a user
 type UserAuthUseCaseInterface interface {
 	Login(ctx context.Context, email, password string) (*domain.UserAuth, error)
